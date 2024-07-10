@@ -12,5 +12,6 @@ The application is built using
 - This is done to avoid storing the authentication token in the code. The method is also considered safe in terms of security.
 
 ### Below is an illustration of a sample token:
-<img width="400" alt="Screenshot 2023-10-24 at 15 55 37" src="https://github.com/3sidedcube/cubestyleguide-ios/assets/25069943/edb25187-f69c-426f-a569-f00d90a35509">
+<img width="400" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/d5a4d95c-8794-4996-b8ce-bc124e2cc6a1">
+
 
