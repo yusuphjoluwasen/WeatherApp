@@ -32,6 +32,8 @@ struct SearchList {
         case stopLoadingAndResetQuery
         case navigateToDetail(WeatherDetailModel)
         case weatherDetail(PresentationAction<WeatherDetail.Action>)
+        case dismissErrorAlert
+                     
     }
     
     /// Identifiers for cancellable operations, used to manage the lifecycle of asynchronous tasks.
@@ -125,6 +127,9 @@ struct SearchList {
                 state.weatherDetail = WeatherDetail.State(weatherDetail: data)
                 return .none
         
+            case .dismissErrorAlert:
+                state.error = nil
+                return .none
             }
         }
         .ifLet(\.$weatherDetail, action: \.weatherDetail) {

@@ -53,15 +53,26 @@ struct SearchHistoryView: View {
             do {
                 try await Task.sleep(for: .milliseconds(1000))
                 await store.send(.searchQueryChangeDebounced).finish()
-            } catch {
-                /// Handle error if necessary
-            }
+            } catch {}
         }
         .navigationDestination(
             item: $store.scope(state: \.weatherDetail, action: \.weatherDetail)
         ) { store in
             WeatherDetailView(store: store)
         }
+        ///Display error
+        .alert(
+            isPresented: .constant(store.error != nil),
+            content: {
+                Alert(
+                    title: Text("Error"),
+                    message: Text(store.error.toString),
+                    dismissButton: .default(Text("OK")) {
+                        store.send(.dismissErrorAlert)
+                    }
+                )
+            }
+        )
     }
 }
 
