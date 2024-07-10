@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "freezing_drizzle.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
