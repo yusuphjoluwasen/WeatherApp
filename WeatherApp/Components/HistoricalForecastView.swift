@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Utilities
 
 /// HistoricalForecastView: A view for displaying historical forecast information and loading historical data.
 ///

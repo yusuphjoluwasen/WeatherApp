@@ -191,3 +191,106 @@ extension WeatherResponse {
         } ?? []
     }
 }
+
+// Mock WeatherResponse
+extension WeatherResponse {
+    static let mock = WeatherResponse(
+        timelines: Timelines(
+            minutely: [
+                WeatherEntry(
+                    time: "2024-07-09T11:49:00Z",
+                    values: WeatherValue(
+                        cloudBase: 0.13,
+                        cloudCeiling: 0.13,
+                        cloudCover: 99,
+                        dewPoint: 19.19,
+                        freezingRainIntensity: 0,
+                        humidity: 94,
+                        precipitationProbability: 0,
+                        pressureSurfaceLevel: 999.79,
+                        rainIntensity: 0.0,
+                        sleetIntensity: 0.0,
+                        snowIntensity: 0.0,
+                        temperature: 20.19,
+                        temperatureApparent: 20.19,
+                        uvHealthConcern: 0,
+                        uvIndex: 1,
+                        visibility: 12.61,
+                        weatherCode: 1001
+                    )
+                )
+            ],
+            hourly: [
+                WeatherEntry(
+                    time: "2024-07-09T12:00:00Z",
+                    values: WeatherValue(
+                        cloudBase: 0.15,
+                        cloudCeiling: 0.15,
+                        cloudCover: 95,
+                        dewPoint: 19.20,
+                        freezingRainIntensity: 0,
+                        humidity: 93,
+                        precipitationProbability: 10,
+                        pressureSurfaceLevel: 1000.00,
+                        rainIntensity: 0.1,
+                        sleetIntensity: 0.0,
+                        snowIntensity: 0.0,
+                        temperature: 21.00,
+                        temperatureApparent: 21.00,
+                        uvHealthConcern: 1,
+                        uvIndex: 2,
+                        visibility: 13.00,
+                        weatherCode: 1002
+                    )
+                )
+            ],
+            daily: [
+                WeatherDailyEntry(
+                    time: "2024-07-09T00:00:00Z",
+                    values: WeatherDailyValue(
+                        cloudBaseAvg: 0.20,
+                        cloudBaseMax: 0.25,
+                        cloudBaseMin: 0.15,
+                        cloudCeilingAvg: 0.20,
+                        cloudCeilingMax: 0.25,
+                        cloudCeilingMin: 0.15,
+                        cloudCoverAvg: 90,
+                        cloudCoverMax: 95,
+                        cloudCoverMin: 85,
+                        dewPointAvg: 18.50,
+                        temperatureApparentAvg: 22.00,
+                        temperatureApparentMax: 23.00,
+                        temperatureApparentMin: 21.00,
+                        temperatureAvg: 22.00,
+                        temperatureMax: 23.00,
+                        temperatureMin: 21.00,
+                        uvHealthConcernAvg: 2,
+                        uvHealthConcernMax: 3,
+                        uvHealthConcernMin: 1,
+                        uvIndexAvg: 3,
+                        uvIndexMax: 4,
+                        uvIndexMin: 2,
+                        visibilityAvg: 14.00,
+                        visibilityMax: 15.00,
+                        visibilityMin: 13.00,
+                        weatherCodeMax: 1003,
+                        weatherCodeMin: 1002,
+                        windDirectionAvg: 60.00,
+                        windGustAvg: 4.00,
+                        windGustMax: 5.00,
+                        windGustMin: 3.00,
+                        windSpeedAvg: 2.00,
+                        windSpeedMax: 3.00,
+                        windSpeedMin: 1.00
+                    )
+                )
+            ]
+        ),
+        location: Location(
+            lat: 40.7128,
+            lon: -74.0060,
+            name: "New York",
+            type: "city"
+        )
+    )
+}

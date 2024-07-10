@@ -6,7 +6,7 @@
 //
 
 import Foundation
-extension Date {
+public extension Date {
     func formatDate(to outputFormat: DateFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = outputFormat.rawValue

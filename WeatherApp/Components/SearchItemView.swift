@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utilities
 
 /// A view that displays a search item with city name, current temperature, and forecast details.
 ///
@@ -16,10 +17,6 @@ import SwiftUI
 /// This view is designed to be used in a list of search results or as a detailed view for a
 /// specific search.
 ///
-/// Example usage:
-/// ```swift
-/// SearchItemView(search: Search.mock)
-/// ```
 struct SearchItemView: View {
     /// The search object containing weather details.
     let search: Search

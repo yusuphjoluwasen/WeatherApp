@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utilities
 
 /// SearchListView: A view that holds and displays a list of search items.
 ///

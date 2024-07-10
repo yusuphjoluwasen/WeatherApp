@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Utilities
 
 /// DailyForecastView: A  view for displaying daily forecast information.
 ///

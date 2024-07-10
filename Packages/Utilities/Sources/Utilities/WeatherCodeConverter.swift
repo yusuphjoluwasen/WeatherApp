@@ -10,7 +10,7 @@ import Foundation
 /// Returns a tuple containing the weather description and the icon name based on the given weather code.
 /// - Parameter code: The weather code value.
 /// - Returns: A tuple with the weather description and the icon name.
-func weatherInfo(for code: Int) -> (description: String, iconName: String) {
+public func weatherInfo(for code: Int) -> (description: String, iconName: String) {
     let weatherData: [Int: (String, String)] = [
         0: ("Unknown", "unknown"),
         1000: ("Clear", "clear_day"),

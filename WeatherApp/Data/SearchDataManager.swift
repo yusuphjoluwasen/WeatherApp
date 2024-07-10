@@ -1,5 +1,5 @@
 import ComposableArchitecture
-import Foundation
+import Utilities
 import CoreData
 
 @DependencyClient

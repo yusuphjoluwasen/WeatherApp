@@ -18,13 +18,13 @@ extension Optional {
 }
 
 extension Optional where Wrapped == String {
-    var toString:String {
+    public var toString:String {
         return self.or(other: "")
     }
 }
 
-extension Optional where Wrapped == Int {
-    var toInt:Int {
+ extension Optional where Wrapped == Int {
+     public var toInt:Int {
         return self.or(other: 0)
     }
 }

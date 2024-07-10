@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum DateFormat: String {
+public enum DateFormat: String {
     case iso8601 = "yyyy-MM-dd'T'HH:mm:ssZ"
     case hourMinute = "h:mm a"
     case hour = "h a"
@@ -14,7 +14,7 @@ enum DateFormat: String {
     case dayOfWeekShort = "E"
 }
 
-extension String {
+public extension String {
     func toDate(format: DateFormat = DateFormat.iso8601) -> Date? {
          let dateFormatter = DateFormatter()
          dateFormatter.dateFormat = format.rawValue
@@ -23,7 +23,7 @@ extension String {
          return dateFormatter.date(from: self)
      }
 
-    func formatDate(from inputFormat: DateFormat = DateFormat.iso8601, to outputFormat: DateFormat) -> String? {
+     func formatDate(from inputFormat: DateFormat = DateFormat.iso8601, to outputFormat: DateFormat) -> String? {
          guard let date = self.toDate(format: inputFormat) else {
              print("Failed to parse date string")
              return nil
@@ -34,11 +34,11 @@ extension String {
         return dateFormatter.string(from: date)
      }
     
-    var toCelcius : String{
+     var toCelcius : String{
         return "\(self)\u{00B0}C"
     }
     
-    func toDate() -> Date? {
+     func toDate() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.iso8601.rawValue
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
