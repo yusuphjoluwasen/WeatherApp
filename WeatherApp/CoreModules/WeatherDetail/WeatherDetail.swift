@@ -5,14 +5,6 @@
 //  Created by Guru King on 10/07/2024.
 //
 
-//
-//  WeatherDetail.swift
-//  WeatherApp
-//
-//  Created by Guru King on 10/07/2024.
-//
-
-import Foundation
 import ComposableArchitecture
 
 /// WeatherDetail: A reducer that manages the state and actions related to weather details and historical forecasts.
@@ -45,13 +37,11 @@ struct WeatherDetail {
     ///   - updateHistoricalForecasts: Updates the state with the fetched historical forecasts.
     ///   - successResponse: Handles a successful response from the weather client.
     ///   - errorResponse: Handles an error response.
-    ///   - loadingStateChanged: Updates the loading state.
     enum Action {
         case fetchHistoricalForecasts
         case updateHistoricalForecasts(WeatherResponse)
         case successResponse(WeatherResponse)
         case errorResponse(String)
-        case loadingStateChanged(Bool)
     }
     
     /// Dependencies: The dependencies required by the reducer, including the weather client for fetching data.
@@ -62,35 +52,29 @@ struct WeatherDetail {
         Reduce { state, action in
             switch action {
             case .fetchHistoricalForecasts:
-                // Fetch historical forecasts for the specified location.
+                /// Fetch historical forecasts for the specified location.
+                state.isLoadingHistorical = true
                 return .run { [location = state.weatherDetail.city] send in
-                    await send(.loadingStateChanged(true))
                     let result = try await weatherClient.history(location: location)
                     await send(.successResponse(result))
                 } catch: { error, send in
-                    // Handle error and send errorResponse action.
+                    /// Handle error and send errorResponse action.
                     return await send(.errorResponse("Failed to fetch data: \(error.localizedDescription)"))
                 }
                 
             case let .successResponse(result):
-                // Handle successful response and update the state with the historical forecasts.
-                return .merge(
-                    .send(.loadingStateChanged(false)),
-                    .send(.updateHistoricalForecasts(result))
-                )
-                
+                /// Handle successful response and update the state with the historical forecasts.
+                state.isLoadingHistorical = false
+                return .send(.updateHistoricalForecasts(result))
+            
             case let .errorResponse(errorString):
-                // Handle error response and update the state with the error message.
+                /// Handle error response and update the state with the error message.
+                state.isLoadingHistorical = false
                 state.error = errorString
-                return .send(.loadingStateChanged(false))
-           
-            case let .loadingStateChanged(loading):
-                // Update the loading state.
-                state.isLoadingHistorical = loading
                 return .none
 
             case let .updateHistoricalForecasts(response):
-                // Update the state with the fetched historical forecasts.
+                /// Update the state with the fetched historical forecasts.
                 state.hourlyHistory = response.toHourlyForecasts()
                 state.dailyHistory = response.toDailyForecasts()
                 return .none

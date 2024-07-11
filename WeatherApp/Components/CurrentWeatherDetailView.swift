@@ -14,6 +14,8 @@ struct CurrentWeatherView: View {
     /// The weather detail object containing the current weather information.
     let weatherDetail: WeatherDetailModel
     
+    // MARK: - UI Rendering
+    
     var body: some View {
         VStack {
             Text(weatherDetail.city)

@@ -10,16 +10,20 @@ import SwiftUI
 /// DailyForecastListView: A view that displays a list of daily forecast items.
 ///
 /// This view takes an array of `DailyForecast` objects and displays each one using the `DailyForecastItemView` component.
-/// It aligns the items to the leading edge and ensures they are spaced out with padding.
+
 struct DailyForecastListView: View {
     /// An array of `DailyForecast` objects to be displayed in the list.
     let dailyForecasts: [DailyForecast]
 
+    // MARK: - UI Rendering
+    
     var body: some View {
         LazyVStack(alignment:.leading) {
             ForEach(dailyForecasts) { forecast in
+                
                 DailyForecastItemView(forecast: forecast)
                 
+                /// aligns the items to the leading edge and ensures they are spaced out with padding.
                 if forecast.id != dailyForecasts.last?.id {
                     Spacer()
                 }

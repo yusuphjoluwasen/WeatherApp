@@ -21,6 +21,8 @@ struct SearchBar: View {
     
     /// The placeholder text for the search bar.
     var placeholder: String = "Search"
+    
+    // MARK: - UI Rendering
 
     var body: some View {
         HStack {

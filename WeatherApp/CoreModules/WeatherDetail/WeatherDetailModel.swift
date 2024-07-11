@@ -47,6 +47,7 @@ struct DailyForecast: Equatable, Identifiable {
     }
 }
 
+///weather detail mock data for testing
 extension WeatherDetailModel {
     static let mock = WeatherDetailModel(
         id: UUID(),

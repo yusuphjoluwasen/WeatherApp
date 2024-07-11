@@ -12,22 +12,23 @@ import SwiftUI
 ///
 /// This view takes an array of `Forecast` objects and displays them in a horizontally scrollable list.
 struct ForecastListViewWithTitle: View {
-    /// An array of forecast objects containing minutely weather details.
+    
+    /// An array of forecast objects.
     let forecasts: [Forecast]
     
     /// A title for the forecast which must be specified
     var title:String
     
+    // MARK: - UI Rendering
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.headline)
-              
+            
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForecastListView(forecasts: forecasts)
-                        
-                }
+                
+                ForecastListView(forecasts: forecasts)
             }
             .padding(.top)
         }

@@ -240,7 +240,7 @@ extension WeatherResponse {
                         uvHealthConcern: 1,
                         uvIndex: 2,
                         visibility: 13.00,
-                        weatherCode: 1002
+                        weatherCode: 1001
                     )
                 )
             ],
@@ -273,8 +273,8 @@ extension WeatherResponse {
                         visibilityAvg: 14.00,
                         visibilityMax: 15.00,
                         visibilityMin: 13.00,
-                        weatherCodeMax: 1003,
-                        weatherCodeMin: 1002,
+                        weatherCodeMax: 1001,
+                        weatherCodeMin: 1001,
                         windDirectionAvg: 60.00,
                         windGustAvg: 4.00,
                         windGustMax: 5.00,

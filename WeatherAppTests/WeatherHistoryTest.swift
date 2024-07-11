@@ -10,22 +10,24 @@ import ComposableArchitecture
 import Networking
 @testable import WeatherApp
 
-@MainActor
-final class SearchListTests: XCTestCase {
 
+final class SearchListTests: XCTestCase {
+    
+    @MainActor
     func testSearchQueryChanged() async {
-        let store = TestStore(initialState: SearchList.State()) {
-            SearchList()
+        let store = TestStore(initialState: SearchHistory.State()) {
+            SearchHistory()
         }
 
         await store.send(.searchQueryChanged("New York")) {
             $0.searchQuery = "New York"
         }
     }
-
+    
+    @MainActor
     func testFetchForecastSuccess() async {
-        let store = TestStore(initialState: SearchList.State(searchQuery: "New York")) {
-            SearchList()
+        let store = TestStore(initialState: SearchHistory.State(searchQuery: "New York")) {
+            SearchHistory()
             
         } withDependencies: {
             $0.weatherClient.forecast = { _ in .mock }
@@ -68,11 +70,12 @@ final class SearchListTests: XCTestCase {
                 state.isLoading = false
         }
     }
-
+    
+    @MainActor
     func testFetchForecastFailure() async {
     
-        let store = TestStore(initialState: SearchList.State(searchQuery: "New York")) {
-            SearchList()
+        let store = TestStore(initialState: SearchHistory.State(searchQuery: "New York")) {
+            SearchHistory()
         } withDependencies: {
             $0.weatherClient.forecast = { _ in throw NetworkServiceError.invalidURL}
         }
@@ -87,14 +90,15 @@ final class SearchListTests: XCTestCase {
         }
     }
     
+    @MainActor
     func testLoadSearchHistory() async {
           let mockSearches = [
             Search.mock,
             Search.mock
           ]
   
-          let store = TestStore(initialState: SearchList.State()) {
-              SearchList()
+          let store = TestStore(initialState: SearchHistory.State()) {
+              SearchHistory()
           } withDependencies: {
               $0.searchDataManager.saveOrUpdateSearch = { _ in }
               $0.searchDataManager.fetchCitySearches = { return mockSearches }

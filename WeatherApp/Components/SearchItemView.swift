@@ -12,14 +12,16 @@ import Utilities
 ///
 /// The view takes a `Search` object which contains the weather details for a specific location.
 /// It displays the city's name, current temperature, and a brief description of the weather along
-/// with an icon. Below that, it shows a list of forecasts for different times.
-///
+/// with an icon.
+/// 
 /// This view is designed to be used in a list of search results or as a detailed view for a
 /// specific search.
 ///
 struct SearchItemView: View {
     /// The search object containing weather details.
     let search: Search
+    
+    // MARK: - UI Rendering
     
     var body: some View {
         VStack(alignment: .leading) {

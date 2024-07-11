@@ -22,7 +22,7 @@ struct SearchHistoryView: View {
     // MARK: - Properties
     
     /// The store for managing the state and actions of the SearchList reducer.
-    @Bindable var store: StoreOf<SearchList>
+    @Bindable var store: StoreOf<SearchHistory>
     
     // MARK: - UI Rendering
     
@@ -79,22 +79,22 @@ struct SearchHistoryView: View {
 
 #Preview {
     SearchHistoryView(store: Store(
-        initialState: SearchList.State(
+        initialState: SearchHistory.State(
             searches: [Search.mock],
             isLoading: false
         )
     ) {
-        SearchList()
+        SearchHistory()
     })
 }
 
 #Preview("Loading State") {
     SearchHistoryView(store: Store(
-        initialState: SearchList.State(
+        initialState: SearchHistory.State(
             searches: [],
             isLoading: true
         )
     ) {
-        SearchList()
+        SearchHistory()
     })
 }

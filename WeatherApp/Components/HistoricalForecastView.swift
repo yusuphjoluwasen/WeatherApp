@@ -9,15 +9,18 @@ import SwiftUI
 import ComposableArchitecture
 import Utilities
 
-/// HistoricalForecastView: A view for displaying historical forecast information and loading historical data.
+/// HistoricalForecastView: A view for displaying historical forecast information and loading historical data for a particular city
 ///
 /// This view takes a `Store` of `WeatherDetail` and displays options to load historical forecasts along with the loaded historical forecasts.
 struct HistoricalForecastView: View {
+    
     /// The store containing the state and actions for the weather detail.
     let store: StoreOf<WeatherDetail>
     
     var body: some View {
         VStack{
+            
+            ///display the button to load forecast, when forecast is empty
             if store.dailyHistory.isEmpty {
                 LoadHistoricalForecastButtonView(store: store)
             } else if store.isLoadingHistorical {

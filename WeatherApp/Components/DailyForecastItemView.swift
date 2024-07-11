@@ -15,6 +15,8 @@ struct DailyForecastItemView: View {
     /// The daily forecast object containing weather details for a specific day.
     let forecast: DailyForecast
 
+    // MARK: - UI Rendering
+    
     var body: some View {
         HStack {
             Text(forecast.time)

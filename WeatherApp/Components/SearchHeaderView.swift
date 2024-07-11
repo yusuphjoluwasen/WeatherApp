@@ -12,13 +12,11 @@ import SwiftUI
 /// This view takes a `Search` object and displays the city's name, current temperature,
 /// and the time of the forecast.
 ///
-/// Example usage:
-/// ```swift
-/// SearchHeaderView(search: Search.mock)
-/// ```
 struct SearchHeaderView: View {
     /// The search object containing weather details.
     let search: Search
+    
+    // MARK: - UI Rendering
     
     var body: some View {
         VStack(alignment: .leading) {

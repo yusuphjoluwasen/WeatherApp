@@ -16,6 +16,8 @@ struct DailyForecastView: View {
     /// An array of daily forecast objects containing daily weather details.
     let dailyForecasts: [DailyForecast]
     
+    // MARK: - UI Rendering
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(Constants.dailyforecasts)

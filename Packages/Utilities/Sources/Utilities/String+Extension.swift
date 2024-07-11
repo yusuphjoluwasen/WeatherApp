@@ -45,5 +45,9 @@ public extension String {
         dateFormatter.timeZone = TimeZone.current
         return dateFormatter.date(from: self)
     }
+    
+    /// Checks if a string is empty or contains only whitespace and newlines.
+    var isTrimmedEmpty: Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 }
-

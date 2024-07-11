@@ -12,14 +12,12 @@ import SwiftUI
 /// This view takes a `Forecast` object which contains weather details for a specific time.
 /// It displays the time, temperature, and a corresponding weather icon.
 ///
-/// Example usage:
-/// ```swift
-/// ForecastItemView(forecast: Forecast.mock)
-/// ```
 struct ForecastItemView: View {
     /// The forecast object containing weather details for a specific time.
     let forecast: Forecast
-
+    
+    // MARK: - UI Rendering
+    
     var body: some View {
         VStack {
             Text(forecast.time)

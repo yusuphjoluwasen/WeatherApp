@@ -2,13 +2,30 @@ import ComposableArchitecture
 import Utilities
 import CoreData
 
+
+/// `SearchDataManagerClient`: A dependency client for managing city search data.
+///
+/// This client provides methods for fetching city search data and saving or updating search data from core data.
+/// The dependency client macro ensure It can be used in both live and test environments
+///
 @DependencyClient
 struct SearchDataManagerClient {
-    var fetchCitySearches: () throws -> [Search]
-    var saveOrUpdateSearch: (_ search: Search) throws -> Void
+    /// Fetches city searches from the data store.
+     ///
+     /// - Returns: An array of `Search` objects.
+     /// - Throws: An error if the fetch request fails.
+     var fetchCitySearches: () throws -> [Search]
+     
+     /// Saves or updates a search entry in the data store.
+     ///
+     /// - Parameter search: The `Search` object to be saved or updated.
+     /// - Throws: An error if the save or update operation fails.
+     var saveOrUpdateSearch: (_ search: Search) throws -> Void
 }
 
+/// Provides a test implementation  of `SearchDataManagerClient`  for unit tests and preview
 extension SearchDataManagerClient: TestDependencyKey {
+    
     static let previewValue = Self(
         fetchCitySearches: {
             return [.mock]
@@ -20,11 +37,9 @@ extension SearchDataManagerClient: TestDependencyKey {
     
     static let testValue = Self(
         fetchCitySearches: {
-            // Mock test data
             return [.mock]
         },
         saveOrUpdateSearch: { _ in
-            // Mock save operation
         }
     )
 }
@@ -36,7 +51,9 @@ extension DependencyValues {
     }
 }
 
+/// Provides the live implementation of `SearchDataManagerClient` for the application.
 extension SearchDataManagerClient: DependencyKey {
+    
     static let liveValue = Self(
         fetchCitySearches: {
             let context = CoreDataManager.shared.context
