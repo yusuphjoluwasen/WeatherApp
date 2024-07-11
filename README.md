@@ -23,13 +23,13 @@ The application is built using
 - The TCA macros, e.g., `@Reducer`, `@ObservableState`, are used in the reducer.
 - I used `@DependencyClient` from the TCA library for dependency injection, e.g., to inject the `WeatherClient` service that provides an abstraction to make network calls into the reducer. It is also used for `SearchDataManagerClient`, which provides an abstraction for Core Data. This ensures the reducers can be fully unit tested with mocks.
 - Unit tests are written for both reducers.
-- The Network and Utility modules are created as independent modules using swift package manager
+- The Network and Utility modules are created as independent modules using swift package manager to optimize application's efficiency
 
 ### Assumptions
 - An assumption was made about the option of loading historical forecasts. I added a button that, when clicked, fetches previous weather historical data from the API.
 
 ### Improvements
-- To add the `Data Layer` and `WeatherService` modules as independent modules to Packages to optimize application's efficiency.
+- To create the `Data Layer` and `WeatherService` modules as Packages.
 
 ### Screenshots
 - To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
