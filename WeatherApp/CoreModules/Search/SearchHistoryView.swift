@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Utilities
 
 /// SearchHistoryView: A view that displays the search history and allows users to search for weather information.
 ///
@@ -65,9 +66,9 @@ struct SearchHistoryView: View {
             isPresented: .constant(store.error != nil),
             content: {
                 Alert(
-                    title: Text("Error"),
+                    title: Text(Constants.error),
                     message: Text(store.error.toString),
-                    dismissButton: .default(Text("OK")) {
+                    dismissButton: .default(Text(Constants.close)) {
                         store.send(.dismissErrorAlert)
                     }
                 )
