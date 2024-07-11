@@ -13,6 +13,8 @@ public enum Constants {
     public static let weatherdetails = "Weather Details"
     public static let loadhistoricalforecasts = "Load Historical Forecasts"
     public static let nosearches = "No Searches Available"
+    public static let error = "Error"
+    public static let close = "Close"
     
 } 
 
