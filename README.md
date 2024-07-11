@@ -29,7 +29,7 @@ The application is built using
 - An assumption was made about the option of loading historical forecasts. I added a button that, when clicked, fetches previous weather historical data from the API.
 
 ### Improvements
-- To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
+- To add the `Data Layer` and `WeatherService` modules as independent modules to Packages to optimize application's efficiency.
 
 ### Screenshots
 - To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
