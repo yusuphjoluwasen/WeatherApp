@@ -30,11 +30,15 @@ The application is built using
 
 ### Improvements
 - To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
+
+### Screenshots
+- To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
+<img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/547d9439-3f77-4ce5-ad2a-5f2edb7db3f3">
+<img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/156ea2e2-dafa-45c9-a4f5-0e7eb736bc01">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/d299ec32-d05c-4855-a614-b38e3c12783a">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/2309341b-1557-4f82-9420-5f03281aabca">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/119a7fd9-e2fc-431a-8f10-462efb63bc40">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/7970d55f-bb8c-4712-896b-649375289c87">
-<img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/547d9439-3f77-4ce5-ad2a-5f2edb7db3f3">
-<img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/156ea2e2-dafa-45c9-a4f5-0e7eb736bc01">
+
 
 
