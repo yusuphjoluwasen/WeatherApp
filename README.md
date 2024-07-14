@@ -29,10 +29,9 @@ The application is built using
 - An assumption was made about the option of loading historical forecasts. I added a button that, when clicked, fetches previous weather historical data from the API.
 
 ### Improvements
-- To create the `Data Layer` and `WeatherService` modules as Packages.
+- To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
 
 ### Screenshots
-- To create the `Data Layer` and `WeatherService` modules as independent modules using Swift Package Manager to optimize the application's efficiency.
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/547d9439-3f77-4ce5-ad2a-5f2edb7db3f3">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/156ea2e2-dafa-45c9-a4f5-0e7eb736bc01">
 <img width="150" alt="Screenshot 2024-07-10 at 22 51 39" src="https://github.com/yusuphjoluwasen/WeatherApp/assets/25069943/d299ec32-d05c-4855-a614-b38e3c12783a">
